@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="../src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/font.css">
+    <style>
+        table{
+            border: 1px solid black;
+            flex-shrink: 0;
+        }
+        th{
+            width: 200px;
+            height: 50px;
+        }
+        td{
+            border: 1px solid #000;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            background: #fff;
+        }
+         tr{
+            border: 1px solid #000;
+            width: 200px;
+            height: 50px;
+        }
+        .scrollnone::-webkit-scrollbar{
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f5f5f5]">
+
+    <!--aside start-->
+    <div id="aside" class="bg-gradient-to-b bg-transparent from-[#e9a132] to-[#0c0d0f]  fixed lg:left-[10px] bottom-[10px] top-[10px] rounded-[10px] h-[100vh] w-[260px] left-[-100%]">
+        <div class="flex justify-end p-3 md:hidden lg:hidden"><i onclick="closeaside()" class="fa-solid fa-xmark text-white text-xl"></i></div>
+        <div class="flex py-2  justify-center  rounded-[10px] bg-black  mt-3 mx-2 items-center">
+            <img  src="../img/logo.svg" class="w-[90px] " alt="logo-2" /></div>
+        <div class="text-black mx-2 py-1 rounded-[6px]  bg-white flex justify-center items-center mt-6 gap-4">
+            <p><i class="fa-solid fa-border-all font-[500] text-xl"></i></p>
+            <p><a href="umumi.htm" class="font-[500]">Ümumi baxış</a></p>
+        </div>
+        <div class="text-black mx-2 py-1 rounded-[6px]  bg-white flex justify-center items-center mt-6 gap-4">
+            <p><i class="fa-solid fa-sliders font-[500] text-xl"></i></p>
+            <p><a href="slider.htm" class="font-[500]">Slider </a></p>
+        </div>
+        <div class="text-black mx-2 py-1 rounded-[6px]  bg-white flex justify-center items-center mt-6 gap-4">
+            <p><i class="fa-regular fa-newspaper font-[500] text-xl"></i></p>
+            <p><a href="xəbər.htm" class="font-[500]">Xəbərlər </a></p>
+        </div>
+    </div>
+    <!--aside end-->
+
+    <div><i onclick="openaside()" class="fa-regular fa-square-caret-right text-[#e9a132] text-2xl p-3"></i></div>
+   
+    <!--Mezmun-->
+    <div onclick="openmodal()" class="flex justify-center lg:justify-end lg:pr-[100px]"><button class="bg-black text-[#e9a132] w-[160px] font-[500] rounded-[10px] hover:bg-[#e9a132] hover:text-black duration-500 ease-in-out h-[40px] flex justify-center items-center">Əlavə et</button></div>
+    <div class="flex  lg:justify-end lg:pr-[150px] mt-15 mx-2 overflow-x-scroll scrollnone  ">
+        <table>
+            <thead>
+                <tr class="bg-black text-[#e9a132]">
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Image</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+           <tbody id="sliderdata">
+             <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+           </tbody>
+        </table>
+    </div>
+    <!--Modal-->
+    <div id="overlay" class="fixed inset-0 z-50 bg-black/70 hidden"></div>
+        <div id="modal" class="flex justify-center items-center fixed inset-0 z-100 hidden mx-3 ">
+            <div class="bg-white w-[400px] h-[420px] rounded-[20px] overflow-hidden shadow-[0_0_10px_#e9a132]">
+                <div class="flex justify-between px-3 p-3 bg-black ">
+                    <p class="font-[500] text-[#e9a132]">Slider əlavə et</p>
+                    <i onclick="closemodal()" class="fa-solid fa-xmark text-xl text-[#e9a132]"></i>
+                </div>
+                    <div class="I flex justify-center items-center flex-col gap-3 mt-8">
+                        <div class="flex flex-col">
+                            <span class="text-[#e9a132] font-[500]">Şəkil </span>
+                           <input id="sliderimage" type="file"  class="w-[350px] h-[42px] bg-white border pl-3 mt-2 pt-2" />
+                        </div>
+                        
+                       <div class="flex flex-col">
+                            <span class="text-[#e9a132] font-[500]">Başlıq </span>
+                            <input id="slidertitle" type="text" placeholder="Title" class="w-[350px] h-[42px] bg-white border pl-3 mt-2 " />
+                        </div>
+                         <div class="flex flex-col">
+                            <span class="text-[#e9a132] font-[500]">Məzmun </span>
+                            <input id="slidercontent" type="text" placeholder="Content" class="w-[350px] h-[42px] bg-white border pl-3 mt-2" />
+                        </div>
+                       <div class="mt-3"><button onclick="sendToslider()" class="bg-black text-[#e9a132] w-[120px] h-[40px] fex justify-center items-center rounded-[10px]">Göndər</button></div>
+                    </div>
+            </div>
+        </div>
+    <!--Modal-->
+   
+        <script src="js/slider.js"></script>
+        
+</body>
+
+</html>

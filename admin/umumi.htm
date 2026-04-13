@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avers-admin-panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="../src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/font.css">
+</head>
+
+<body class="bg-[#f5f5f5]">
+
+    <!--aside start-->
+    <div id="aside" class="bg-gradient-to-b bg-transparent from-[#e9a132] to-[#0c0d0f]  fixed lg:left-[10px] bottom-[10px] top-[10px] rounded-[10px] h-[100vh] w-[260px] left-[-100%]">
+        <div class="flex justify-end p-3 md:hidden lg:hidden"><i onclick="closeaside()" class="fa-solid fa-xmark text-white text-xl"></i></div>
+        <div class="flex py-2  justify-center  rounded-[10px] bg-black  mt-3 mx-2 items-center">
+            <img  src="../img/logo.svg" class="w-[90px] " alt="logo-2" /></div>
+        <div class="text-black mx-2 py-1 rounded-[6px]  bg-white flex justify-center items-center mt-6 gap-4">
+            <p><i class="fa-solid fa-border-all font-[500] text-xl"></i></p>
+            <p><a href="umumi.htm" class="font-[500]">Ümumi baxış</a></p>
+        </div>
+        <div class="text-black mx-2 py-1 rounded-[6px]  bg-white flex justify-center items-center mt-6 gap-4">
+            <p><i class="fa-solid fa-sliders font-[500] text-xl"></i></p>
+            <p><a href="slider.htm" class="font-[500]">Slider </a></p>
+        </div>
+         <div class="text-black mx-2 py-1 rounded-[6px]  bg-white flex justify-center items-center mt-6 gap-4">
+            <p><i class="fa-regular fa-newspaper font-[500] text-xl"></i></p>
+            <p><a href="xəbər.htm" class="font-[500]">Xəbərlər </a></p>
+        </div>
+    </div>
+    <!--aside end-->
+
+    <div><i onclick="openaside()" class="fa-regular fa-square-caret-right text-[#e9a132] text-2xl p-3"></i></div>
+    <div class="flex lg:justify-end  mt-4">
+        <div class="w-[1214px] mx-8 bg-white shadow-[0_0_6px_#e9a132] py-10 pl-8 flex flex-col justify-center">
+             <p class=" text-5xl font-[500] text-[#e9a132]">Xoş gəlmisiniz !</p>
+        <p class="pt-7 pb-3">Avers İdarəetmə Paneli tam stabil vəziyyətdədir. Bu gün hansı bölməni yeniləyirik?</p>
+        <div class="flex gap-6 flex-wrap ">
+            <button class="bg-gradient-to-br bg-transparent from-[#e9a132] to-[#0c0d0f] hover:bg-transparent hover:bg-gradient-to-br hover:-translate-y-1.5 hover:from-[#0c0d0f] hover:to-[#e9a132] duration-500 ease-in-out w-[140px] h-[36px] flex justify-center items-center rounded-[7px] text-white">Yeni Xəbər</button>
+            <button class="bg-gradient-to-br bg-transparent from-[#e9a132] to-[#0c0d0f] hover:bg-transparent hover:bg-gradient-to-br hover:-translate-y-1.5 hover:from-[#0c0d0f] hover:to-[#e9a132] duration-500 ease-in-out w-[140px] h-[36px] flex justify-center items-center rounded-[7px] text-white">Yeni Layihə</button>
+            <button class="bg-gradient-to-br bg-transparent from-[#e9a132] to-[#0c0d0f] hover:bg-transparent hover:bg-gradient-to-br hover:-translate-y-1.5 hover:from-[#0c0d0f] hover:to-[#e9a132] duration-500 ease-in-out w-[140px] h-[36px] flex justify-center items-center rounded-[7px] text-white">Tənzimləmələr</button>
+        </div>
+        </div>       
+    </div>
+    <!--mezmu ,-->
+    <div class="flex justify-center lg:justify-end lg:pr-[100px] items-center gap-10 mt-10 flex-wrap">
+            <div class="w-full max-w-[330px] shadow-[0_0_6px_#e9a132] hover:scale-[1.05] duration-500 ease-in-out bg-white flex  flex-col  justify-center items-center gap-3 h-[200px] rounded-[10px]">
+                <i class="fa-regular fa-file text-[#e9a132] text-3xl"></i>
+                <p>Məzmun</p>
+                <p class="text-[#e9a132] font-[700] text-[1.2em]">Xəbər Bazası</p>
+                <p>Paylaşılan son xəbərlər</p>
+            </div>
+             <div class="w-full max-w-[330px] shadow-[0_0_6px_#e9a132] hover:scale-[1.05] duration-500 ease-in-out bg-white flex flex-col justify-center items-center gap-3  h-[200px] rounded-[10px]">
+               <i class="fa-solid fa-diagram-project  text-[#e9a132] text-3xl"></i>
+                <p>Xidmətlər</p>
+                <p class="text-[#e9a132] font-[700] text-[1.2em]">Servislər</p>
+                <p>Təklif olunan xidmətlər</p>
+            </div>
+             <div class="w-full max-w-[330px] shadow-[0_0_6px_#e9a132] hover:scale-[1.05]  duration-500 ease-in-out bg-white flex  flex-col  justify-center items-center gap-3 h-[200px] rounded-[10px]">
+                <i class="fa-solid fa-handshake  text-[#e9a132] text-3xl"></i>
+                <p>Portfolio</p>
+                <p class="text-[#e9a132] font-[700] text-[1.2em]">Layihələr</p>
+                <p>Aktiv işlərin siyahısı</p>
+            </div>
+        </div>
+        <script src="js/admin.js"></script>
+</body>
+
+</html>
