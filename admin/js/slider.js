@@ -16,7 +16,6 @@
 
     function openmodal(){
         overlay.style.display = 'flex'
-
         modal.style.display = 'flex'
         modal.style.transition = '.9s ease-in-out'
         overlay.style.transition = '.9s ease-in-out'

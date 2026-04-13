@@ -5,8 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIZMAX</title>
     <link rel="stylesheet" href="../src/output.css">
+    <link rel="stylesheet" href="font.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        swiper-container {
+         --swiper-navigation-color: #ffffff;
+         --swiper-navigation-size: 25px;
+   }
+    
+    </style>
 </head>
 <body>
-    
+    <header>
+        <div class="h-[100vh] lg:w-[100%] ">
+            <swiper-container id="slidercontainer" class="mySwiper" pagination="true" pagination-type="fraction" navigation="true" autoplay="true">
+                    <!--Api-den gelir slider-->
+            </swiper-container>
+
+        </div>
+        <!--header top-->
+        <div class="bg-black/60 h-[90px] w-full fixed top-0 z-50 ">
+            <div class="flex justify-between mx-7 items-center h-[100%]">
+                <div class="flex gap-5 items-center">
+                    <img src="../img/logo.svg" alt="logo" />
+                    <ul class="flex gap-7 text-white uppercase font-[500] text-[.9em] hidden md:flex lg:flex">
+                        <li>Home <sup>+</sup></li>
+                        <li>About</li>
+                        <li>Pages <sup>+</sup></li>
+                        <li>Services</li>
+                        <li>Portfolio</li>
+                        <li>blog <sup>+</sup></li>
+                        <li>contact</li>
+                        <li><a href="../admin/umumi.htm">Admin</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex items-center gap-3 hidden md:flex lg:flex">
+                    <p><i class="fa-solid fa-magnifying-glass text-white text-2xl"></i></p>
+                    <p><i class="fa-solid fa-phone text-[#e9a132] text-2xl"></i></p>
+                    <div class="text-white font-[500] text-[.8em]">
+                        <p>Need help? Call us:</p>
+                        <p>(+800) 1234 5678 90</p>
+                    </div>
+                </div>
+                <!--menuBar-->
+                    <div id="menubar" class="bg-[#181818] w-[100vw]  fixed top-[-100%] left-0 lg:hidden md:hidden">
+                        <ul class="flex flex-col gap-4 py-5 text-white uppercase font-[500]  px-4  ">
+                        <li class="flex justify-between items-center text-white ">Home <span>+</span></li>
+                        <li>About</li>
+                         <li class="flex justify-between items-center text-white ">Pages <span>+</span></li>
+                        <li>Services</li>
+                        <li>Portfolio</li>
+                         <li class="flex justify-between items-center text-white ">blog <span>+</span></li>
+                        <li>contact</li>
+                        <li><a href="../admin/umumi.htm">Admin</a></li>
+                    </ul>
+                    </div>
+                <!--menuBar-->
+                <div class="md:hidden lg:hidden"><i onclick="menubaropenclose()" id="mark" class="fa-solid fa-bars text-2xl text-white "></i></div>
+            </div>
+        </div>
+         <!--header top-->
+
+         <!--header bottom-->
+         <div class="bg-[#17191d] w-full h-[160px]">
+            <div style="background: url('../img/moving_text_shape.png') center/cover; width: 100%; height: 100%; display: flex; align-items: center;">
+                <marquee behavior="scroll" direction="left" scrollamount="10" style="color: white; font-size: 30px; white-space: nowrap; text-transform: uppercase; ">
+                    <span class="mx-10">* Creative Business & Finance</span>
+                    <span class="mx-10">* Business Inspired Template</span>
+                    <span class="mx-10">* Innovation Creative Design </span>
+                    <span class="mx-10">* Creative Business & Finance</span> 
+                </marquee>
+            </div>
+         </div>
+         <!--header bottom-->
+    </header>
+
+
+    <script src="fetch.js"></script>
+    <script src="app.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
 </body>
 </html>
