@@ -36,65 +36,69 @@
         let newstitle = document.getElementById('newstitle')
         let newscontent = document.getElementById('newscontent')
 
-        const newsimageValue = newsimage.value
-        const newstitleValue = newstitle.value
-        const newscontentValue = newscontent.value
-        const NewsData = {
-            "gallery" : newsimageValue ,
-            "title" : newstitleValue , 
-            "content" : newscontentValue
+        const formData = new FormData()
+        formData.append("title" , newstitle.value)
+        formData.append("content" , newscontent.value)
+        if(newsimage.files[0]){
+            formData.append("main_image" , newsimage.files[0])
         }
 
-        fetch("https://api142.nurlandev.click/api/news" ,{
+        fetch('https://api142.nurlandev.click/api/news' , {
             method : "POST" ,
-            body : JSON.stringify(NewsData) ,
-              headers: {
-            "Accept": "application/json" ,
-            "Content-Type": "application/json"
-            
-        }
+            body : formData ,
+            headers : {"accept" : "application/json"}
         })
-            modal.style.display = 'none'
-            overlay.style.display = 'none'
-            getNews()
+        .then(res => res.json())
+        .then(response => {
+           if(response){
+             newsimage.value = ""
+            newstitle.value = ""
+            newscontent.value = ""
+            getNewsData()
+           modal.style.display = 'none'
+           overlay.style.display = 'none'
+           }
+        } )
 
     }
 
-    
     let newstable = document.getElementById('newstable')
-    function getNews(){
+    function getNewsData(){
         newstable.innerHTML = ""
         fetch('https://api142.nurlandev.click/api/news')
         .then(res => res.json())
-        .then(res => res.data.map(item =>
+        .then(response => response.data.map(item =>
             newstable.innerHTML += `
-             <tr>
+           <tr>
                 <td>${item.id}</td>
                 <td>${item.title}</td>
                 <td>${item.content}</td>
-                <td class="flex justify-center "><img class="w-[50px] h-[50px]" src="${item.gallery}" /></td>
-                 <td>
-                 
-                   <button onclick="deletenews(${item.id})"><i class="fa-solid fa-xmark text-xl text-red-700 font-[500]"></i></button>
-                </td>
+                <td><img src="https://api142.nurlandev.click/public/img/news/${item.main_image}"/></td>
+                
+                     <td>
+                            <button onclick="deletenews(${item.id})"><i class="fa-solid fa-xmark text-xl text-red-700 font-[500]"></i></button>
+                    </td>
+            
             </tr>
+
             `
         ))
     }
 
-   getNews()
+    getNewsData()
 
-   function deletenews(id){
-    fetch(`https://api142.nurlandev.click/api/news/${id}` , {
-        method : "DELETE" , 
-         headers: {
+    function deletenews(id){
+        fetch(`https://api142.nurlandev.click/api/news/${id}` , {
+            method : "DELETE" ,
+           headers: {
            "Accept": "application/json" 
-        }
-    })
-    .then(res => res.json())
-    .then(response => {
-        if(response){
-            getNews()
-        }
-    })
-   }
+        } 
+        })
+         .then(res  => res.json())
+        .then(response => {
+            if(response){
+                alert("Uğurla silindi !")
+                getNewsData()
+            }
+        })
+    }
