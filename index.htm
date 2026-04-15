@@ -10,11 +10,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        swiper-container {
-         --swiper-navigation-color: #ffffff;
-         --swiper-navigation-size: 25px;
-   }
+      swiper-container {
+        --swiper-navigation-color: #ffffff;
+        --swiper-navigation-size: 25px;
+      }
     
+      .portfolioSwiper {
+        width: 100%;
+        height: 450px;
+      }
+    
+      swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      swiper-slide {
+        margin-right: 0 !important;
+      }
     </style>
 </head>
 <body>
@@ -83,7 +98,7 @@
          <!--header bottom-->
     </header>
     <!-- Service -->
-    <section class="px-4 py-10 md:px-12 md:py-14 font-sans md:w-[1400px] md:mx-auto">
+    <section class="px-4 py-10 md:px-12 md:py-14 font-sans max-w-[1400px] mx-auto">
 
     <!-- Header -->
     <div class="flex flex-col gap-4 mb-10 md:flex-row md:justify-between md:items-start">
@@ -272,7 +287,7 @@
 
     </section>
     <!-- About us -->
-    <section class="px-4 py-12 md:px-12 md:py-20 font-sans md:w-[1400px] md:mx-auto">
+    <section class="px-4 py-12 md:px-12 md:py-20 font-sans max-w-[1400px] mx-auto">
     <div class="flex flex-col gap-10 md:flex-row md:items-center md:gap-16">
 
       <!-- Left: Image -->
@@ -368,10 +383,453 @@
 
       </div>
     </div>
-    </section>
+    </section> 
+
+<!--Our Latest Project-->
+    <div class="bg-[#f2f3f7]">
+      <div class="container mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-5 pt-30 pb-10 max-w-7xl px-4 md:px-12">
+        <div class="flex flex-col gap-3">
+        <h6 class="text-[#e9a132] text-xl font-medium">Our Latest Project</h6>
+        <h2 class="text-[#18191d] text-5xl font-bold md:w-[70%] lg:w-[60%]">Take a look our Completed Projects</h2>
+      </div>
+      <div class="flex flex-row gap-3">
+        <span id="prevBtn"  class="border-0 bg-white hover:bg-[#e9a132] ease-in-out duration-300 cursor-pointer text-2xl shadow-xl w-12 h-12 flex justify-center items-center rounded-[50%]">←</span>
+        <span id="nextBtn" class="border-0 bg-white hover:bg-[#e9a132] ease-in-out duration-300 cursor-pointer text-2xl shadow-xl w-12 h-12 flex justify-center items-center rounded-[50%]">→</span>
+      </div>
+      </div>
+    </div>
+
+    <!--Project Slider-->
+    <swiper-container class="portfolioSwiper" init="false">
+      <swiper-slide><img class="hover:scale-110 duration-300" src="../img/portfolio_1.jpeg"></swiper-slide>
+      <swiper-slide><img class="hover:scale-110 duration-300" src="../img/portfolio_2.jpeg"></swiper-slide>
+      <swiper-slide><img class="hover:scale-110 duration-300" src="../img/portfolio_3.jpeg"></swiper-slide>
+      <swiper-slide><img class="hover:scale-110 duration-300" src="../img/portfolio_1.jpeg"></swiper-slide>
+      <swiper-slide><img class="hover:scale-110 duration-300" src="../img/portfolio_2.jpeg"></swiper-slide>
+      <swiper-slide><img class="hover:scale-110 duration-300" src="../img/portfolio_3.jpeg"></swiper-slide>
+      <swiper-slide><img class="hover:scale-110 duration-300" src="../img/portfolio_4.jpeg"></swiper-slide>
+    </swiper-container>
+    <!--Project Slider-->
+
+    <!--Why Choose Us-->
+    <div class="relative bg-[url('../img/why_choose_us_left_img.jpeg')] bg-center bg-cover py-30 text-white overflow-hidden">
+      <div class="container mx-auto flex items-center max-w-7xl px-4 md:px-12">
+        <div class="flex flex-col gap-5 w-full lg:max-w-[50%] z-10">
+          <h6 class="text-[#e9a132] text-xl font-medium">Why Choose Us</h6>
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+            Developing a <span class="text-[#e9a132]">design that is easy</span> to use and navigate
+          </h2>
+          <p class="opacity-90">
+            Providing legal advice, contract drafting, compliance assistance, intellectual
+            property protection, and other legal support for businesses.
+          </p>
+          <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 mt-4">
+            <div class="flex flex-col gap-5">
+              <div class="flex items-center gap-5">
+                <span
+                  class="flex-shrink-0 bg-[#e9a132] flex justify-center items-center w-16 h-16 md:w-18 md:h-18 rounded-2xl shadow-lg">
+                  <i class="fa-solid fa-tv text-2xl"></i>
+                </span>
+                <h6 class="text-xl font-bold leading-tight">Digital agency services</h6>
+              </div>
+              <div class="flex items-center gap-5">
+                <span
+                  class="flex-shrink-0 bg-[#e9a132] flex justify-center items-center w-16 h-16 md:w-18 md:h-18 rounded-2xl shadow-lg">
+                  <i class="fa-solid fa-mug-saucer text-2xl"></i>
+                </span>
+                <h6 class="text-xl font-bold leading-tight">Super expert developers</h6>
+              </div>
+            </div>
+            <div class="flex flex-col gap-5">
+              <div class="flex items-center gap-5">
+                <span
+                  class="flex-shrink-0 bg-[#e9a132] flex justify-center items-center w-16 h-16 md:w-18 md:h-18 rounded-2xl shadow-lg">
+                  <i class="fa-solid fa-leaf text-2xl"></i>
+                </span>
+                <h6 class="text-xl font-bold leading-tight">Creative digital agency</h6>
+              </div>
+              <div class="flex items-center gap-5">
+                <span
+                  class="flex-shrink-0 bg-[#e9a132] flex justify-center items-center w-16 h-16 md:w-18 md:h-18 rounded-2xl shadow-lg">
+                  <i class="fa-solid fa-paint-roller text-2xl"></i>
+                </span>
+                <h6 class="text-xl font-bold leading-tight">Creating a user friendly design</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hidden lg:block absolute right-0 top-0 bottom-0 w-[45%]">
+          <img src="../img/why_choose_us_right_img.jpeg" class="w-full h-full object-cover" alt="Right Image">
+        </div>
+      </div>
+    </div>
+    <!--Why Choose Us-->
+                <!--Our Latest Project-->
+
+    <!--Testimonial-->
+    <div class="relative bg-[url('../img/testimonial_bg.jpeg')] bg-cover bg-center py-20 lg:py-30 overflow-hidden">
+      <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-10 max-w-7xl px-4 md:px-12">
+        <div class="w-full lg:w-1/3 flex flex-col gap-5 z-10">
+          <h6 class="text-[#e9a132] text-xl font-medium">Testimonial</h6>
+          <h2 class="text-[#18191d] text-4xl md:text-5xl font-bold leading-tight">What They’re Saying?</h2>
+          <p class="text-gray-600">Providing legal advice, contract drafting, compliance assistance, intellectual property
+            protection, and other legal support for businesses.</p>
+          <div class="flex flex-row gap-3 mt-4">
+            <button
+              class="review-prev border-0 bg-white hover:bg-[#e9a132] hover:text-white transition-all duration-300 cursor-pointer text-2xl shadow-xl w-12 h-12 flex justify-center items-center rounded-full">←</button>
+            <button
+              class="review-next border-0 bg-white hover:bg-[#e9a132] hover:text-white transition-all duration-300 cursor-pointer text-2xl shadow-xl w-12 h-12 flex justify-center items-center rounded-full">→</button>
+          </div>
+        </div>
+        <div class="w-full lg:w-2/3 min-w-0">
+          <swiper-container class="reviewSlider" init="false">
+            <swiper-slide class="pt-12 pb-6 px-2">
+              <div class="bg-white p-8 rounded-xl shadow-sm relative flex flex-col gap-4 border border-gray-50">
+                <div class="absolute left-4 -top-10 w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                  <img src="../img/avatar_1.png" class="w-full h-full object-cover">
+                </div>
+                <div class="text-[#e9a132] flex gap-1 mt-6">
+                  <i class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i
+                    class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i
+                    class="fa-solid fa-star text-sm"></i>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed">I've been using [business name] for the past year and I'm
+                  so glad I did. Their products and services are top-notch and their customer service is amazing.</p>
+                <div>
+                  <h5 class="font-bold text-lg">Darlene Robertson</h5>
+                  <span class="text-gray-400 text-sm">Web design</span>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide class="pt-12 pb-6 px-2">
+              <div class="bg-white p-8 rounded-xl shadow-sm relative flex flex-col gap-4 border border-gray-50">
+                <div class="absolute left-4 -top-10 w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                  <img src="../img/avatar_2.png" class="w-full h-full object-cover">
+                </div>
+                <div class="text-[#e9a132] flex gap-1 mt-6">
+                  <i class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i
+                    class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i
+                    class="fa-solid fa-star text-sm"></i>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed">I've been using [business name] for the past year and I'm
+                  so glad I did. Their products and services are top-notch and their customer service is amazing.</p>
+                <div>
+                  <h5 class="font-bold text-lg">Darlene Robertson</h5>
+                  <span class="text-gray-400 text-sm">Web design</span>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide class="pt-12 pb-6 px-2">
+              <div class="bg-white p-8 rounded-xl shadow-sm relative flex flex-col gap-4 border border-gray-50">
+                <div class="absolute left-4 -top-10 w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                  <img src="../img/avatar_3.png" class="w-full h-full object-cover">
+                </div>
+                <div class="text-[#e9a132] flex gap-1 mt-6">
+                  <i class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i
+                    class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i
+                    class="fa-solid fa-star text-sm"></i>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed">I've been using [business name] for the past year and I'm
+                  so glad I did. Their products and services are top-notch and their customer service is amazing.</p>
+                <div>
+                  <h5 class="font-bold text-lg">Darlene Robertson</h5>
+                  <span class="text-gray-400 text-sm">Web design</span>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide class="pt-12 pb-6 px-2">
+              <div class="bg-white p-8 rounded-xl shadow-sm relative flex flex-col gap-4 border border-gray-50">
+                <div class="absolute left-4 -top-10 w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                  <img src="../img/avatar_4.png" class="w-full h-full object-cover">
+                </div>
+                <div class="text-[#e9a132] flex gap-1 mt-6">
+                  <i class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i
+                    class="fa-solid fa-star text-sm"></i><i class="fa-solid fa-star text-sm"></i><i
+                    class="fa-solid fa-star text-sm"></i>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed">I've been using [business name] for the past year and I'm
+                  so glad I did. Their products and services are top-notch and their customer service is amazing.</p>
+                <div>
+                  <h5 class="font-bold text-lg">Darlene Robertson</h5>
+                  <span class="text-gray-400 text-sm">Web design</span>
+                </div>
+              </div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+    </div>
+    <!--Testimonial-->
+
+    <!--Meet Our Team Member-->
+    <div class="container mx-auto flex flex-col gap-20 max-w-7xl px-4 md:px-12 pb-30">
+      <div class="flex flex-col gap-5 justify-center items-center">
+        <h6 class="text-[#e9a132] text-xl font-medium">Meet Our Team Member</h6>
+        <h2 class="text-[#18191d] text-4xl md:text-5xl text-center font-bold lg:w-[60%]">Meet the professional team behind
+          the success</h2>
+      </div>
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-5">
+        <div class="border-0 relative group bg-[#18191d] hover:bg-[#e9a132] ease-in-out duration-500 text-white rounded-[50px] overflow-hidden">
+          <img class="rounded-[50px]" src="../img/team_member_1.jpeg" alt="team">
+          <div class="text-center py-5">
+            <h5 class="text-2xl font-bold">Ralph Edwards</h5>
+            <p class="font-medium">Web designer</p>
+          </div>
+          <div class="absolute hidden group-hover:flex duration-500 transition gap-3 left-1/2 -translate-x-1/2 bottom-33">
+            <span class="w-12 h-12 rounded-[50%] bg-[#615a5a] hover:bg-[#e9a132] duration-300 ease-in-out flex justify-center items-center"><i class="fa-brands fa-facebook-f"></i></span>
+            <span class="w-12 h-12 rounded-[50%] bg-[#615a5a] hover:bg-[#e9a132] duration-300 ease-in-out flex justify-center items-center"><i class="fa-brands fa-twitter"></i></span>
+            <span class="w-12 h-12 rounded-[50%] bg-[#615a5a] hover:bg-[#e9a132] duration-300 ease-in-out flex justify-center items-center"><i class="fa-brands fa-dribbble"></i></span>
+          </div>
+        </div>
+        <div class="border-0 relative group bg-[#18191d] hover:bg-[#e9a132] ease-in-out duration-500 text-white rounded-[50px] overflow-hidden">
+          <img class="rounded-[50px]" src="../img/team_member_2.jpeg" alt="team">
+          <div class="text-center py-5">
+            <h5 class="text-2xl font-bold">Wade Warren</h5>
+            <p class="font-medium">Marketing Coordinator</p>
+          </div>
+          <div class="absolute hidden group-hover:flex duration-500 transition gap-3 left-1/2 -translate-x-1/2 bottom-33">
+            <span class="w-12 h-12 rounded-[50%] bg-[#615a5a] hover:bg-[#e9a132] duration-300 ease-in-out flex justify-center items-center"><i class="fa-brands fa-facebook-f"></i></span>
+            <span class="w-12 h-12 rounded-[50%] bg-[#615a5a] hover:bg-[#e9a132] duration-300 ease-in-out flex justify-center items-center"><i class="fa-brands fa-twitter"></i></span>
+            <span class="w-12 h-12 rounded-[50%] bg-[#615a5a] hover:bg-[#e9a132] duration-300 ease-in-out flex justify-center items-center"><i class="fa-brands fa-dribbble"></i></span>
+          </div>
+        </div>
+        <div class="border-0 relative group bg-[#18191d] hover:bg-[#e9a132] ease-in-out duration-500 text-white rounded-[50px] overflow-hidden">
+          <img class="rounded-[50px]" src="../img/team_member_3.jpeg" alt="team">
+          <div class="text-center py-5">
+            <h5 class="text-2xl font-bold">Jane Cooper</h5>
+            <p class="font-medium">Creative Designer</p>
+          </div>
+          <div class="absolute hidden group-hover:flex duration-500 transition gap-3 left-1/2 -translate-x-1/2 bottom-33">
+            <span class="w-12 h-12 rounded-[50%] bg-[#615a5a] hover:bg-[#e9a132] duration-300 ease-in-out flex justify-center items-center"><i class="fa-brands fa-facebook-f"></i></span>
+            <span class="w-12 h-12 rounded-[50%] bg-[#615a5a] hover:bg-[#e9a132] duration-300 ease-in-out flex justify-center items-center"><i class="fa-brands fa-twitter"></i></span>
+            <span class="w-12 h-12 rounded-[50%] bg-[#615a5a] hover:bg-[#e9a132] duration-300 ease-in-out flex justify-center items-center"><i class="fa-brands fa-dribbble"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Meet Our Team Member-->
+
+    <!--Contact With Us-->
+    <div class="bg-[url('../img/cta_bg.jpeg')] bg-center bg-cover relative">
+      <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 py-30 px-4 md:px-12">
+        <div class="flex flex-col gap-5 text-white w-full lg:w-[50%]">
+          <h6 class="text-[#e9a132] text-xl font-medium">Contact With Us</h6>
+          <h2 class="text-4xl md:text-5xl font-bold">Let’s Work Together?</h2>
+          <p>Providing legal advice, contract drafting, compliance assistance, intellectual property protection, and other
+            legal support for businesses.</p>
+          <div class="flex flex-col gap-5">
+            <div class="flex items-center gap-5">
+              <div class="bg-[#e9a132] flex justify-center items-center w-16 h-16 md:w-18 md:h-18 rounded-2xl shadow-lg"><i
+                  class="fa-solid fa-phone text-2xl"></i></div>
+              <div>
+                <p class="text-[#e9a132] text-[18px] font-medium">Have Any Question?</p>
+                <h6 class="text-xl font-bold">+ 070 4531 9507</h6>
+              </div>
+            </div>
+            <div class="flex items-center gap-5">
+              <div class="bg-[#e9a132] flex justify-center items-center w-16 h-16 md:w-18 md:h-18 rounded-2xl shadow-lg"><i
+                  class="fa-solid fa-envelope text-2xl"></i></div>
+              <div>
+                <p class="text-[#e9a132] text-[18px] font-medium">Send Email</p>
+                <h6 class="text-xl font-bold">bizmax@laralink.com</h6>
+              </div>
+            </div>
+            <div class="flex items-center gap-5">
+              <div class="bg-[#e9a132] flex justify-center items-center w-16 h-16 md:w-18 md:h-18 rounded-2xl shadow-lg"><i
+                  class="fa-solid fa-location-dot text-2xl"></i></div>
+              <div>
+                <p class="text-[#e9a132] text-[18px] font-medium">Address</p>
+                <h6 class="text-xl font-bold">Yewtree Cottage, Kings Pyon, HR4 8PZ</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-0 bg-white rounded-2xl flex flex-col p-10 lg:p-20 w-full lg:w-[50%] gap-10">
+          <h2 class="text-[#18191d] text-center text-4xl md:text-5xl font-bold">Contact Us</h2>
+          <form class="flex flex-col gap-5">
+            <input class="border-0 bg-[#f2f3f7] rounded-[8px] outline-[#e9a132] p-4" type="text" placeholder="Your Name" />
+            <input class="border-0 bg-[#f2f3f7] rounded-[8px] outline-[#e9a132] p-4" type="email"
+              placeholder="Your Email" />
+            <textarea class="border-0 bg-[#f2f3f7] rounded-[8px] outline-[#e9a132] p-4"
+              placeholder="Message here..."></textarea>
+            <button
+              class="border-0 rounded-[8px] bg-[#e9a132] hover:bg-[#af7925] ease-in-out duration-300 text-white font-medium p-3 w-36">Submit
+              Now</button>
+          </form>
+        </div>
+        <img class="absolute hidden xl:flex w-96 right-0 bottom-0" src="../img/contact_img_1.png" alt="woman">
+      </div>
+    </div>
+    <!--Contact With Us-->
+
+    <!--Brands-->
+    <div class="container mx-auto flex flex-row justify-center lg:justify-between items-center flex-wrap gap-5 py-30 max-w-7xl px-4 md:px-12">
+      <img src="../img/brand_1.svg" alt="brand">
+      <img src="../img/brand_2.svg" alt="brand">
+      <img src="../img/brand_3.svg" alt="brand">
+      <img src="../img/brand_4.svg" alt="brand">
+      <img src="../img/brand_5.svg" alt="brand">
+    </div>
+    <!--Brands-->
+
+    <!--Find The Blogs-->
+    <div class="container mx-auto flex flex-col gap-20 max-w-7xl px-4 md:px-12 pb-30">
+      <div class="flex flex-col gap-5 justify-center items-center">
+        <h6 class="text-[#e9a132] text-xl font-medium">Find The Blogs</h6>
+        <h2 class="text-[#18191d] text-4xl md:text-5xl text-center font-bold lg:w-[60%]">Find Out Latest News
+          and Articles</h2>
+      </div>
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-5">
+        <div class="border-0 shadow-xl">
+          <div class="relative group overflow-hidden">
+            <img class="duration-500 group-hover:scale-110 object-cover" src="../img/post_1.jpeg" alt="post" />
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50"></div>
+          </div>
+          <div class="flex flex-col gap-3 p-5">
+            <div class="flex flex-row items-center gap-10">
+              <div class="flex flex-row items-center gap-2 text-[12px]">
+                <i class="fa-solid fa-user text-[#e9a132]"></i>
+                <p class="text-[#666] hover:text-[#e9a132] duration-300 ease-in-out font-medium cursor-pointer">By admin</p>
+              </div>
+              <div class="flex flex-row items-center gap-2 text-[12px]">
+                <i class="fa-solid fa-comment-dots text-[#e9a132]"></i>
+                <p class="text-[#666] hover:text-[#e9a132] duration-300 ease-in-out font-medium cursor-pointer">3 comments
+                </p>
+              </div>
+            </div>
+            <h6 class="text-xl text-[#18191d] font-bold">What services does your business provide?</h6>
+            <p class="text-[#666]">We provide a range of digital marketing lutions including website design.</p>
+          </div>
+          <button
+            class="group border-0 bg-[#7070701a] hover:bg-[#e9a132] duration-300 ease-in-out cursor-pointer flex flex-row justify-between items-center w-full px-5 py-3">
+            <h6 class="text-[#18191d] font-medium group-hover:text-white duration-300">Read More</h6>
+            <span
+              class="border-0 w-8 h-8 rounded-[50%] flex justify-center items-center bg-[#e9a132] group-hover:bg-white duration-300">
+              <i class="fa-solid fa-arrow-right text-[12px] text-white group-hover:text-[#e9a132] duration-300"></i>
+            </span>
+          </button>
+        </div>
+        <div class="border-0 shadow-xl">
+          <div class="relative group overflow-hidden">
+            <img class="duration-500 group-hover:scale-110 object-cover" src="../img/post_2.jpeg" alt="post" />
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50"></div>
+          </div>
+          <div class="flex flex-col gap-3 p-5">
+            <div class="flex flex-row items-center gap-10">
+              <div class="flex flex-row items-center gap-2 text-[12px]">
+                <i class="fa-solid fa-user text-[#e9a132]"></i>
+                <p class="text-[#666] hover:text-[#e9a132] duration-300 ease-in-out font-medium cursor-pointer">By admin</p>
+              </div>
+              <div class="flex flex-row items-center gap-2 text-[12px]">
+                <i class="fa-solid fa-comment-dots text-[#e9a132]"></i>
+                <p class="text-[#666] hover:text-[#e9a132] duration-300 ease-in-out font-medium cursor-pointer">3 comments
+                </p>
+              </div>
+            </div>
+            <h6 class="text-xl text-[#18191d] font-bold">What services does your business provide?</h6>
+            <p class="text-[#666]">We provide a range of digital marketing lutions including website design.</p>
+          </div>
+          <button
+            class="group border-0 bg-[#7070701a] hover:bg-[#e9a132] duration-300 ease-in-out cursor-pointer flex flex-row justify-between items-center w-full px-5 py-3">
+            <h6 class="text-[#18191d] font-medium group-hover:text-white duration-300">Read More</h6>
+            <span
+              class="border-0 w-8 h-8 rounded-[50%] flex justify-center items-center bg-[#e9a132] group-hover:bg-white duration-300">
+              <i class="fa-solid fa-arrow-right text-[12px] text-white group-hover:text-[#e9a132] duration-300"></i>
+            </span>
+          </button>
+        </div>
+        <div class="border-0 shadow-xl">
+          <div class="relative group overflow-hidden">
+            <img class="duration-500 group-hover:scale-110 object-cover" src="../img/post_3.jpeg" alt="post" />
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50"></div>
+          </div>
+          <div class="flex flex-col gap-3 p-5">
+            <div class="flex flex-row items-center gap-10">
+              <div class="flex flex-row items-center gap-2 text-[12px]">
+                <i class="fa-solid fa-user text-[#e9a132]"></i>
+                <p class="text-[#666] hover:text-[#e9a132] duration-300 ease-in-out font-medium cursor-pointer">By admin</p>
+              </div>
+              <div class="flex flex-row items-center gap-2 text-[12px]">
+                <i class="fa-solid fa-comment-dots text-[#e9a132]"></i>
+                <p class="text-[#666] hover:text-[#e9a132] duration-300 ease-in-out font-medium cursor-pointer">3 comments
+                </p>
+              </div>
+            </div>
+            <h6 class="text-xl text-[#18191d] font-bold">What services does your business provide?</h6>
+            <p class="text-[#666]">We provide a range of digital marketing lutions including website design.</p>
+          </div>
+          <button
+            class="group border-0 bg-[#7070701a] hover:bg-[#e9a132] duration-300 ease-in-out cursor-pointer flex flex-row justify-between items-center w-full px-5 py-3">
+            <h6 class="text-[#18191d] font-medium group-hover:text-white duration-300">Read More</h6>
+            <span
+              class="border-0 w-8 h-8 rounded-[50%] flex justify-center items-center bg-[#e9a132] group-hover:bg-white duration-300">
+              <i class="fa-solid fa-arrow-right text-[12px] text-white group-hover:text-[#e9a132] duration-300"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--Find The Blogs-->
+
+
+
+
+
 
     <script src="fetch.js"></script>
     <script src="app.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+
+    <!--Project slider js-->
+    <script>
+      const swiperEl = document.querySelector('.portfolioSwiper');
+
+      const swiperParams = {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1400: { slidesPerView: 4 }
+        }
+      };
+
+      Object.assign(swiperEl, swiperParams);
+      swiperEl.initialize();
+
+      document.getElementById('nextBtn')?.addEventListener('click', () => swiperEl.swiper.slideNext());
+      document.getElementById('prevBtn')?.addEventListener('click', () => swiperEl.swiper.slidePrev());
+    </script>
+
+<!--Testimonial slider js-->
+    <script>
+      const reviewSlider = document.querySelector('.reviewSlider');
+
+      if (reviewSlider) {
+        const reviewOptions = {
+          loop: true,
+          spaceBetween: 10, 
+          slidesPerView: 1,
+          navigation: {
+            nextEl: '.review-next',
+            prevEl: '.review-prev',
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 10
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 10
+            }
+          }
+        };
+
+        Object.assign(reviewSlider, reviewOptions);
+        reviewSlider.initialize();
+      }
+    </script>
 </body>
 </html>
