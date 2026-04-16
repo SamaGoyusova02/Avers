@@ -71,7 +71,7 @@
         .then(responese => responese.json())
         .then(responese => responese.data.map(item => 
             sliderdata.innerHTML += `
-                <tr>
+                <tr >
                    <td>${item.id}</td>
                     <td>${item.title}</td>
                     <td>${item.description}</td>
@@ -79,6 +79,7 @@
                     <td>
                             <button onclick="deleteSlider(${item.id})"><i class="fa-solid fa-xmark text-xl text-red-700 font-[500]"></i></button>
                         </td>
+                        
                     </tr>
             `
         ))

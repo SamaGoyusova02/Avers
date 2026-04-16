@@ -52,8 +52,7 @@
         .then(response => {
 
              if(response){
-                servicesicon.value = ""
-                servicesdesc.value = ""
+                 servicesdesc.value = ""
                 servicestitle.value = ""
                 servicesimage.value = ""
                 modal.style.display = 'none'
